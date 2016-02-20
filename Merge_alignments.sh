@@ -9,11 +9,11 @@
 
 ## Variables
 # export GENOME="Hg19"
-# export SAMPLE=""
+# export SAMPLE="..."
 # export ALIGNMENT_DIRECTORY=".../STAR_alignment/$GENOME/$SAMPLE"
 # export SAMTOOLS=".../samtools"
-# export LAST_SAMPLE=""
-# export EMAIL=""
+# export LAST_SAMPLE="..."
+# export EMAIL="..."
 # export AGGREGATE_READS_PER_GENE=".../Aggregate_ReadsPerGene.R"
 
 START=`date +%s`

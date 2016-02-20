@@ -10,7 +10,7 @@
 # SRA_DIRECTORY="..."
 # SAMPLES="..." # This is the sample "accession list" from the SRA download page
 # SOURCE_DIRECTORY="ftp://ftp-trace.ncbi.nih.gov/sra/sra-instant/reads/ByRun/sra/..."
-# EMAIL=""
+# EMAIL="..."
 
 START=`date +%s`
 echo Begin Fetch_SRA.sh on `date +"%B %d, %Y at %r"`

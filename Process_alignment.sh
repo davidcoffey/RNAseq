@@ -9,15 +9,15 @@
 # Download and install IGVtools
 
 ## Variables
-# export GENOME=""
-# export SAMPLE=""
+# export GENOME="..."
+# export SAMPLE="..."
 # export IGV_GENOME=".../$GENOME.genome"
 # export ALIGNMENT_DIRECTORY=""
 # export PICARD=".../picard.jar"
 # export SAMTOOLS=".../samtools/1.0/bin/samtools"
 # export IGVTOOLS=".../IGVTools/2.3.26/igvtools"
-# export LAST_SAMPLE=""
-# export EMAIL=""
+# export LAST_SAMPLE="..."
+# export EMAIL="..."
 
 START=`date +%s`
 echo Begin Process_alignment.sh for sample $SAMPLE on `date +"%B %d, %Y at %r"`

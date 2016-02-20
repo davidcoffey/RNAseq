@@ -12,7 +12,6 @@
 
 ## Variables
 # export HLAFOREST=".../hlaforest/scripts/CallHaplotypesPE.sh"
-# export MODULEPATH=/app/easybuild/modules/all:$MODULEPATH
 # export SCRATCH_DIRECTORY="..."
 # export HLAFOREST_DIRECTORY="..."
 # export READ1="....fastq.gz"
@@ -36,12 +35,6 @@ if ! [[ -f $SCRATCH_DIRECTORY/$SAMPLE/$SAMPLE.R2.fastq ]]; then
   cp $READ2 $SCRATCH_DIRECTORY/$SAMPLE/$SAMPLE.R2.fastq.gz
   gunzip $SCRATCH_DIRECTORY/$SAMPLE/$SAMPLE.R2.fastq.gz
 fi
-
-# Load pre-requresite modules on rhino
-module load bowtie
-module load perl
-module load EasyBuild/2.3.0
-module load BioPerl/1.6.1
 
 # Call HLA haplotypes
 $HLAFOREST $HLAFOREST_DIRECTORY/$SAMPLE \

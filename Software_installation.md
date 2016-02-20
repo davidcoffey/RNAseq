@@ -29,8 +29,8 @@ http://genome.ucsc.edu/cgi-bin/hgTables
 * output file: enter a file name to save your results to a file, or leave blank to display results in the browser
 
 #### Download and install picard tools
-git clone https://github.com/broadinstitute/picard.git
 ```
+git clone https://github.com/broadinstitute/picard.git
 cd picard/
 ant clone-htsjdk
 ant
