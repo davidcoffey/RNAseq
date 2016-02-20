@@ -25,8 +25,8 @@
 # export MILLS_1000G=".../Mills_and_1000G_gold_standard.indels.hg19.reorder.vcf"
 # export PHASE1_1000G=".../1000G_phase1.indels.hg19.reorder.vcf"
 # export DBSNP_138=".../dbsnp_138.hg19.reorder.vcf"
-# export LAST_SAMPLE=""
-# export EMAIL=""
+# export LAST_SAMPLE="..."
+# export EMAIL="..."
 
 START=`date +%s`
 echo Begin GATK.sh for sample $SAMPLE on `date +"%B %d, %Y at %r"`

@@ -13,11 +13,11 @@
 # export REFERENCE_FASTA_FILE=".../hg19.fasta"
 # export GTF_FILE=".../hg19.gtf"
 # export READ_LENGTH="50"
-# export GENOME=""
-# export EMAIL=""
+# export GENOME="..."
+# export EMAIL="..."
 
 START=`date +%s`
-echo Begin Build_EBV_STAR_genome.sh for genome $GENOME on `date +"%B %d, %Y at %r"`
+echo Begin Build_hg19_STAR_genome.sh for genome $GENOME on `date +"%B %d, %Y at %r"`
 
 mkdir -p $GENOME_DIRECTORY
 cd $GENOME_DIRECTORY
@@ -30,10 +30,10 @@ $STAR \
 --sjdbGTFfile $GTF_FILE \
 --sjdbOverhang $((READ_LENGTH - 1)) \
 --runThreadN 4 \
---genomeSAindexNbases 9 # Log2(genome size)/2 - 1
+--genomeSAindexNbases 14 # Log2(genome size)/2 - 1
 
 END=`date +%s`
 MINUTES=$(((END-START)/60))
-echo End Build_EBV_STAR_genome.sh for genome $GENOME.  The run time was $MINUTES minutes.
+echo End Build_hg19_STAR_genome.sh for genome $GENOME.  The run time was $MINUTES minutes.
 
-echo "The runtime was $MINUTES minutes" | mail -s "Finished Build_EBV_STAR_genome.sh for genome $GENOME" $EMAIL
+echo "The runtime was $MINUTES minutes" | mail -s "Finished Build_hg19_STAR_genome.sh for sample $GENOME" $EMAIL

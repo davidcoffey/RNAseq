@@ -10,13 +10,13 @@
 # Run STAR_aligner.sh script
 
 ## Variables
-# export STAR_FUSION="~/Apps/STAR-Fusion/STAR-Fusion"
+# export STAR_FUSION=".../STAR-Fusion/STAR-Fusion"
 # export SAMPLE="..."
 # export GTF_FILE=".../hg19.gtf"
 # export ALIGNMENT_DIRECTORY=".../STAR_alignment/hg19/$SAMPLE"
-# export PERL5LIB=$PERL5LIB:~Apps/perl5/lib/perl5
-# export LAST_SAMPLE=""
-# export EMAIL=""
+# export PERL5LIB=$PERL5LIB:.../perl5/lib/perl5
+# export LAST_SAMPLE="..."
+# export EMAIL="..."
 
 START=`date +%s`
 echo Begin STAR_fusion.sh for sample $SAMPLE on `date +"%B %d, %Y at %r"`

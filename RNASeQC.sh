@@ -16,7 +16,7 @@
 # export REFERENCE_FASTA_FILE=".../hg19.fasta"
 # export GENOME="Hg19"
 # export QC_DIRECTORY=".../Quality_control"
-# export EMAIL=""
+# export EMAIL="..."
 
 START=`date +%s`
 echo Begin RNASeQC.sh on `date +"%B %d, %Y at %r"`
