@@ -34,4 +34,4 @@ for S in ${SAMPLES}; do
 done
 ```
 
-Instruction for software installation may be found in the software installation file.
+Instruction for software installation may be found in the [software installation file](https://github.com/davidcoffey/RNAseq/blob/master/Software_installation.md).
