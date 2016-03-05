@@ -36,6 +36,7 @@ for S in ${SAMPLES}; do
 	echo "Extracting ${SRA}..."
 	fastq-dump --split-files -R ${SRA}
 done
+rm *.sra
 
 # Gzip fastq files
 gzip $SRA_DIRECTORY/*
