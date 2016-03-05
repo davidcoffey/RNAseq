@@ -1,32 +1,10 @@
 # Software installation
 
-#### Download Hg19 genome from UCSC
-http://hgdownload.cse.ucsc.edu/goldenPath/hg19/bigZips/
-```
-rsync -a -P rsync://hgdownload.cse.ucsc.edu/goldenPath/hg19/bigZips/hg19.2bit ./
-```
+#### Download Hg19 genome file from Gencode
+http://www.gencodegenes.org/releases/19.html
 
-#### Download twoBitToFa and extract genome
-http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/
-
-#### Extract Hg19 genome
-```
-chmod 700 twoBitToFa
-./twoBitToFa hg19.2bit hg19.fasta
-```
-
-#### Download Hg19 GFT file
-http://genome.ucsc.edu/cgi-bin/hgTables
-
-* clade: Mammal
-* genome: Human
-* assembly: Feb. 2009 (GRCh37/hg19)
-* group: Genes and Gene Predictions
-* track: UCSC Genes
-* table: knownGene
-* region: Select "genome" for the entire genome.
-* output format: GTF - gene transfer format
-* output file: enter a file name to save your results to a file, or leave blank to display results in the browser
+#### Download Hg19 gtf file from Gencode
+http://www.gencodegenes.org/releases/19.html
 
 #### Download and install picard tools
 ```
@@ -89,6 +67,23 @@ get dbsnp_138.hg19.vcf.gz
 get Mills_and_1000G_gold_standard.indels.hg19.sites.vcf.gz
 get 1000G_phase1.indels.hg19.sites.vcf.gz
 bye
+```
+Depending on the GTF file you use, you may need to sort the vcf file and update the sequence dictionary using picard.
+```
+# Create reference dictionary file from fasta file
+samtools faidx hg19.fasta 
+
+# Update VCF sequence dictionary
+picard UpdateVcfSequenceDictionary \
+    I=Mills_and_1000G_gold_standard.indels.hg19.vcf \
+    O=Mills_and_1000G_gold_standard.indels.hg19.updated.vcf \
+    SEQUENCE_DICTIONARY=hg19.dict 
+    
+# Sort VCF using reference dictionary file
+picard SortVcf \
+    I=Mills_and_1000G_gold_standard.indels.hg19.updated.vcf \
+    O=Mills_and_1000G_gold_standard.indels.hg19.updated.sorted.vcf \
+    SEQUENCE_DICTIONARY=hg19.dict
 ```
 
 #### Create fasta index and dictionary files required by GATK

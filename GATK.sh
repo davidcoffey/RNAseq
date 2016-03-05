@@ -1,8 +1,8 @@
 #!/bin/bash
-# Perform GATK Variant Analysis of RNAseq Data using the Broad Institute best practices 3.4
+# Perform GATK Variant Analysis of RNAseq Data using the Broad Institute best practices 3.5
 # Adapted from https://www.broadinstitute.org/gatk/guide/article?id=3891
 # Written by David Coffey dcoffey@fhcrc.org
-# Updated February 11, 2016
+# Updated March 4, 2016
 
 ## Prerequisites (see Software_installation.sh)
 # Download and install GATK
@@ -16,15 +16,15 @@
 # export GATK=".../GenomeAnalysisTK.jar"
 # export ANNOVAR=".../annovar/table_annovar.pl"
 # export ANNOVAR_DATABASES=".../annovar/humandb/"
-# export IGVTOOLS=".../igvtools"
+# export IGVTOOLS=".../igvtools.jar"
 # export BAM_FILE=".../.bam"
 # export SAMPLE="..."
 # export VARIANT_DIRECTORY=".../GATK/$SAMPLE"
 # export SCRATCH_DIRECTORY="../SCRATCH/$SAMPLE"
 # export REFERENCE_FASTA_FILE=".../hg19.fasta"
-# export MILLS_1000G=".../Mills_and_1000G_gold_standard.indels.hg19.reorder.vcf"
-# export PHASE1_1000G=".../1000G_phase1.indels.hg19.reorder.vcf"
-# export DBSNP_138=".../dbsnp_138.hg19.reorder.vcf"
+# export MILLS_1000G=".../Mills_and_1000G_gold_standard.indels.hg19.vcf"
+# export PHASE1_1000G=".../1000G_phase1.indels.hg19.vcf"
+# export DBSNP_138=".../dbsnp_138.hg19.vcf"
 # export LAST_SAMPLE="..."
 # export EMAIL="..."
 
@@ -163,7 +163,7 @@ cd $SCRATCH_DIRECTORY
 $IGVTOOLS index $VARIANT_DIRECTORY/$SAMPLE.filtered_calls_annotated.vcf
 
 # Clean up
-rm $VARIANT_DIRECTORY/$SAMPLE
+rm $VARIANT_DIRECTORY/$SAMPLE.avinput
 rm -R $SCRATCH_DIRECTORY
 
 END=`date +%s`
