@@ -1,10 +1,10 @@
 # Software installation
 
 #### Download Hg19 genome file from Gencode
-http://www.gencodegenes.org/releases/19.html
+https://www.gencodegenes.org/human/release_19.html
 
 #### Download Hg19 gtf file from Gencode
-http://www.gencodegenes.org/releases/19.html
+https://www.gencodegenes.org/human/release_19.html
 
 #### Download and install picard tools
 ```
